@@ -8,7 +8,6 @@
     - [Requerimientos:](#requerimientos)
     - [Instalación](#instalación)
     - [URL del proyecto en Vercel](#url-del-proyecto-en-vercel)
-    - [Estructura de directorios](#estructura-de-directorios)
     - [¿Te ha gustado este proyecto?](#te-ha-gustado-este-proyecto)
 
 
@@ -30,7 +29,7 @@ Para instalar y ejecutar el proyecto, sigue estos pasos:
 1. Abre una terminal en la raíz de tu partición principal o en tu directorio preferido.
 2. Clona el repositorio del proyecto:
     ``` sh
-    git clone https://github.com/serinformatico/proyecto-backend-ch-e1
+    git clone https://github.com/nicoprado7/PreEntrega1-Backend2-Prado.git
     ```
 1. Navega al directorio del proyecto:
     ``` sh
@@ -57,30 +56,6 @@ Para instalar y ejecutar el proyecto, sigue estos pasos:
 Puedes acceder a la versión desplegada del proyecto en la siguiente URL:
 [PROYECTO](https://proyecto-backend-ch-e1-git-main-sergios-projects-23623fb3.vercel.app/)
 
-
-
-### Estructura de directorios
-El proyecto tiene la siguiente estructura de directorios:
-```
-├── backups/
-│   └── proyectoBackendChE1/   # Backup de la base de datos del proyecto.
-└── src/
-    ├── config/                # Archivos de configuración del proyecto.
-    ├── constants/             # Constantes utilizadas en el proyecto.
-    ├── managers/              # Gestión y lógica de negocios.
-    ├── models/                # Modelos de datos y esquemas de Mongoose.
-    ├── public/                # Archivos estáticos públicos.
-    │   ├── css/               # Estilos empleados en el FrontEnd.
-    │   ├── icons/             # Iconos utilizados en el FrontEnd.
-    │   ├── images/            # Imágenes de los productos.
-    │   └── js/                # Archivos de JavaScript para el FrontEnd.
-    ├── routes/                # Rutas del FrontEnd y Backend.
-    │   └── api/               # Rutas específicas de API.
-    ├── utils/                 # Utilidades y funciones auxiliares.
-    └── views/                 # Vistas y plantillas para el FrontEnd.
-        └── layouts/           # Plantilla base.
-
-```
 
 ### ¿Te ha gustado este proyecto?
 Si encuentras útil este proyecto, ¡no dudes en darle una estrella! ⭐ Tu apoyo es muy apreciado y motiva a seguir trabajando en proyectos futuros.
