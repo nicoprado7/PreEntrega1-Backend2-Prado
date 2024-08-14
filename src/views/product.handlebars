@@ -1,3 +1,4 @@
+{{!-- product.handlebars --}}
 <header>
     <h1>PRODUCTO</h1>
 </header>
@@ -13,11 +14,9 @@
             <li>Precio: $<b>{{data.price}}</b></li>
             <li>Stock: <b>{{data.stock}}</b></li>
             <li>Categoría: <b>{{data.category}}</b></li>
-            <li>Estado: <b>{{#if data.status}}HABILITADO{{else}}INHABILITADO{{/if}}</b></li>
-            <li>Disponible: <b>{{#if data.availability}}SI{{else}}NO{{/if}}</b></li>
             <li>
                 Imagen:
-                <img src="/public/images/{{data.thumbnail}}" alt="Imagen del producto">
+                <img src="/public/images/{{data.thumbnail}}" alt="Imagen del producto" class="product-thumbnail">
             </li>
             <li>Creado: <i>{{data.createdAt}}hs</i></li>
             <li>Actualizado: <i>{{data.updatedAt}}hs</i></li>

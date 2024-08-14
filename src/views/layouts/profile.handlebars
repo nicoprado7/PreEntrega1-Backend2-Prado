@@ -1,0 +1,19 @@
+<!-- views/profile.handlebars -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <h1>Perfil de Usuario</h1>
+    <p>Nombre: {{user.firstNname}}</p>
+    <p>Apellido: {{user.lastName}}</p>
+    <p>Email: {{user.email}}</p>
+    <a href="/api/sessions/logout">Cerrar Sesión</a>
+</body>
+
+</html>

@@ -1,3 +1,5 @@
+// product.manager.js
+
 import mongoose from "mongoose";
 import paths from "../utils/paths.js";
 import Product from "../models/product.model.js";

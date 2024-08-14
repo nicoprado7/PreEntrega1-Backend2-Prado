@@ -1,3 +1,5 @@
+//product.routes.js
+
 import { Router } from "express";
 import ProductManager from "../../managers/product.manager.js";
 import uploader from "../../utils/uploader.js";

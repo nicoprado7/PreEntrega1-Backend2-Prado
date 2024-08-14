@@ -1,76 +1,101 @@
-<header>
-    <h1>INICIO</h1>
-</header>
+<!-- index.handlebars -->
+<!DOCTYPE html>
+<html lang="es">
 
-<main class="container-home">
-    <section class="container-home__table">
-        <h3>Productos</h3>
-        <div class="container-home__table__pagination">
-            <div>
-                <span>Ordenamiento</span>
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav>
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/login">Iniciar Sesión</a></li>
+            <li><a href="/register">Registrarse</a></li>
+        </ul>
+    </nav>
+
+    <main class="container-home">
+        <section class="container-home__table">
+            <h3>Productos</h3>
+            <div class="container-home__table__pagination">
                 <div>
-                    {{#if data.prevPage}}
-                    <a href="/?page={{data.prevPage}}{{data.sort}}"><button>Anterior</button></a>
-                    {{/if}}
+                    <span>Ordenamiento</span>
+                    <div>
+                        {{#if data.prevPage}}
+                        <a href="/?page={{data.prevPage}}{{data.sort}}"><button>Anterior</button></a>
+                        {{/if}}
 
-                    {{#if data.hasNextPage}}
-                    <a href="/?page={{data.nextPage}}{{data.sort}}"><button>Siguiente</button></a>
-                    {{/if}}
+                        {{#if data.hasNextPage}}
+                        <a href="/?page={{data.nextPage}}{{data.sort}}"><button>Siguiente</button></a>
+                        {{/if}}
 
-                    <a href="/?page={{data.page}}&sort=asc"><button>⬇</button></a>
-                    <a href="/?page={{data.page}}&sort=desc"><button>⬆</button></a>
-                    <a href="/?page={{data.page}}"><button>X</button></a>
+                        <a href="/?page={{data.page}}&sort=asc"><button>⬇</button></a>
+                        <a href="/?page={{data.page}}&sort=desc"><button>⬆</button></a>
+                        <a href="/?page={{data.page}}"><button>X</button></a>
+                    </div>
                 </div>
+
+                <span>Página {{data.page}} de {{data.totalPages}} ({{data.totalDocs}} productos)</span>
             </div>
-
-            <span>Página {{data.page}} de {{data.totalPages}} ({{data.totalDocs}} documentos)</span>
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Título</th>
-                    <th>Precio</th>
-                    <th>Controles</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each data.docs}}
-                <tr>
-                    <td>{{this.id}}</td>
-                    <td>{{this.title}}</td>
-                    <td>${{this.price}}</td>
-                    <td>
-                        <a href="/products/{{this._id}}/cart/{{this.currentCartId}}">
-                            <button class="button-icon">
-                                <img src=" /public/icons/get_info.png" title="Ver más...">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Precio</th>
+                        <th>Controles</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each data.docs}}
+                    <tr>
+                        <td>{{this._id}}</td>
+                        <td>{{this.title}}</td>
+                        <td>${{this.price}}</td>
+                        <td>
+                            <a href="/products/{{this._id}}/cart/{{this.currentCartId}}">
+                                <button class="button-icon">
+                                    <img src=" /public/icons/get_info.png" title="Ver más...">
+                                </button>
+                            </a>
+                            <button class="button-icon" onclick="addProduct('{{this.currentCartId}}', '{{this._id}}')">
+                                <img src="/public/icons/cart_add.png" title="Agregar al carrito">
                             </button>
-                        </a>
-                        <button class="button-icon" onclick="addProduct('{{this.currentCartId}}', '{{this._id}}')">
-                            <img src="/public/icons/cart_add.png" title="Agregar al carrito">
-                        </button>
-                        <button class="button-icon" onclick="removeProduct('{{this.currentCartId}}', '{{this._id}}')">
-                            <img src=" /public/icons/cart_remove.png" title="Quitar del carrito">
-                        </button>
-                    </td>
-                </tr>
-                {{/each}}
-            </tbody>
-        </table>
-    </section>
+                            <button class="button-icon"
+                                onclick="removeProduct('{{this.currentCartId}}', '{{this._id}}')">
+                                <img src=" /public/icons/cart_remove.png" title="Quitar del carrito">
+                            </button>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </section>
 
-    <section class="container-home__cart">
-        <div>
-            <a href="/carts/{{data.currentCartId}}"><button>Ir al Carrito</button></a>
-            <button onclick="removeAllProducts('{{data.currentCartId}}')">Vaciar Carrito</button>
-        </div>
-    </section>
+        <section class="container-home__cart">
+            <div>
+                <a href="/carts/{{data.currentCartId}}"><button>Ir al Carrito</button></a>
+                <button onclick="removeAllProducts('{{data.currentCartId}}')">Vaciar Carrito</button>
+            </div>
+        </section>
 
-    <section class="navigation">
-        <div>
-            <a href="/real-time-products"><button>Crear Producto</button></a>
-        </div>
-    </section>
-</main>
+        <section class="navigation">
+            <div>
+                <a href="/real-time-products"><button>Crear Producto</button></a>
+            </div>
+        </section>
+    </main>
 
-<script src="/public/js/products_with_http.js"></script>
+    <script src="/public/js/products_with_http.js"></script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 EMINEM SHOP</p>
+    </footer>
+</body>
+
+</html>
